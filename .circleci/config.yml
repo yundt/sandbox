@@ -1,11 +1,13 @@
 version: 2
 jobs:
   build:
-    machine: true
+    docker:
+      - image: circleci/node:4.8.2-jessie
     steps:
       - checkout
   build:
-    machine: true
+    docker:
+      - image: circleci/node:4.8.2-jessie
     steps:
       - checkout
 
