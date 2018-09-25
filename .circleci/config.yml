@@ -5,7 +5,7 @@ jobs:
       - image: circleci/node:4.8.2-jessie
     steps:
       - checkout
-  build:
+  test:
     docker:
       - image: circleci/node:4.8.2-jessie
     steps:
@@ -16,8 +16,8 @@ workflows:
   build_and_test:
     jobs:
       - build:
-        requires:
-          - test
+          requires:
+            - test
       - test:
-        requires:
-          - build
+          requires:
+            - build
