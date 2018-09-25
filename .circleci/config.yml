@@ -1,31 +1,21 @@
-version: 2.1
-
+version: 2
 jobs:
-  a_new_hope:
-    docker:
-      - image: circleci/clojure:lein
+  build:
+    machine: true
     steps:
-      - run: sleep 1
-  the_empire_strikes_back:
-    docker:
-      - image: circleci/clojure:lein
+      - checkout
+  build:
+    machine: true
     steps:
-      - run: sleep 1
-  the_return_of_the_jedi:
-    docker:
-      - image: circleci/clojure:lein
-    steps:
-      - run: sleep 1
+      - checkout
 
 workflows:
   version: 2
-  test:
+  build_and_test:
     jobs:
-      - a_new_hope
-      - the_empire_strikes_back:
-          type: approval
-          requires:
-            - a_new_hope
-      - the_return_of_the_jedi:
-          requires:
-            - the_empire_strikes_back
+      - build:
+        requires:
+          - test
+      - test:
+        requires:
+          - build
