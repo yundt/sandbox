@@ -16,8 +16,7 @@ workflows:
   build_and_test:
     jobs:
       - build:
-          requires:
-            - test
+          type: unknown
       - test:
           requires:
             - build
