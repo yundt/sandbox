@@ -9,11 +9,11 @@ jobs:
     - image: google/cloud-sdk:latest
     steps:
     - setup_remote_docker
-    - run: echo test1
+    - run: echo test
   build_container_image:
       executor: gcloud
       steps:
-          - run: echo test2
+          - run: echo test
 workflows:
   version: 2
   push_to_gcr:
