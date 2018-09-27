@@ -3,15 +3,20 @@ executors:
   gcloud:
     docker:
     - image: google/cloud-sdk:latest
-
 jobs:
-  build:
-    executor: gcloud
+  gcloud_auth_and_configure_docker:
+    docker:
+    - image: google/cloud-sdk:latest
     steps:
-      - run: echo testt
-
+    - setup_remote_docker
+    - run: echo test1
+  build_container_image:
+      executor: gcloud
+      steps:
+          - run: echo test2
 workflows:
   version: 2
-  build:
+  push_to_gcr:
     jobs:
-    - build
+    - gcloud_auth_and_configure_docker
+    - build_container_image
