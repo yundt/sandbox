@@ -8,7 +8,7 @@ jobs:
   build:
     executor: gcloud
     steps:
-      - run: echo test
+      - run: echo testt
 
 workflows:
   version: 2
