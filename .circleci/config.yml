@@ -1,22 +1,23 @@
 version: 2.1
-executors:
-  gcloud:
-    docker:
-    - image: google/cloud-sdk:latest
 jobs:
-  gcloud_auth_and_configure_docker:
+  build:
     docker:
-    - image: google/cloud-sdk:latest
+      - image: circleci/node:10-browsers-legacy
     steps:
-    - setup_remote_docker
-    - run: echo test
-  build_container_image:
-      executor: gcloud
-      steps:
-          - run: echo test
+      - checkout
+  test:
+    docker:
+      - image: circleci/node:10-browsers-legacy
+    steps:
+      - checkout
+
 workflows:
   version: 2
-  push_to_gcr:
+  build_and_test:
     jobs:
-    - gcloud_auth_and_configure_docker
-    - build_container_image
+      - build:
+          requires:
+            - test
+      - test:
+          requires:
+            - build
