@@ -5,16 +5,48 @@ orbs:
 
 jobs:
   test-aws-cli:
-    executor: aws-cli/default
+    docker:
+    - image: circleci/python:2.7-stretch
     steps:
-      - checkout
-      - aws-cli/install
-      - aws-cli/configure:
-          profile-name: testing
-
+    - checkout
+    - run:
+        name: Install AWS CLI
+        command: |
+          if [[ $(command -v pip) == "" ]]; then
+            echo "🚫 pip is required to install AWS CLI and is not available"
+            exit 1
+          else
+            if [[ $(command -v sudo) == "" ]]; then
+              echo "🚫 sudo is required to install AWS CLI and is not available"
+              exit 1
+            else
+              if [[ $(command -v aws) == "" ]]; then
+                sudo pip install awscli
+              else
+                echo "✅ AWS CLI is already installed"
+              fi
+            fi
+          fi
+    - run:
+        name: configure AWS Access Key ID
+        command: |
+          aws configure set aws_access_key_id \
+          $AWS_ACCESS_KEY_ID \
+          --profile testing
+    - run:
+        name: configure AWS Secret Access Key
+        command: |
+          aws configure set aws_secret_access_key \
+          $AWS_SECRET_ACCESS_KEY \
+          --profile testing
+    - run:
+        name: Configure AWS default region
+        command: |
+          aws configure set region $AWS_REGION \
+          --profile testing
 workflows:
   version: 2
   test-orbs:
     jobs:
-      - test-aws-cli:
-          context: aws
+    - test-aws-cli:
+        context: aws
