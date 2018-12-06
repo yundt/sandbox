@@ -7,6 +7,7 @@ jobs:
     steps:
     - checkout
     - run: echo "グーテンモルゲン"
+    - run: echo $VERY_TEST_VAR
     - run: sleep 5
     - run: echo "グーテンアーベント. バイバイ, Auf Wiedersehen, アウフヴィーダーゼーエン. ありがとう, Danke schön, ダンケシェーン."
 
@@ -15,10 +16,6 @@ workflows:
   test:
     jobs:
     - test-output
-
-
-
-
 
 
 
