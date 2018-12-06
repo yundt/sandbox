@@ -10,7 +10,6 @@ jobs:
     - run: sleep 5
     - run: echo "グーテンアーベント. バイバイ, Auf Wiedersehen, アウフヴィーダーゼーエン. ありがとう, Danke schön, ダンケシェーン."
 
-
 workflows:
   version: 2
   test:
