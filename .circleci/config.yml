@@ -1,17 +1,17 @@
-version: 2.1
-
-orbs:
-  foo: yundt/foo@dev:jp_text
+version: 2.0
 
 jobs:
-  test-jp-text:
+  test-output:
     docker:
     - image: circleci/python:2.7-stretch
     steps:
-    - foo/hello
+    - checkout
+    - run: echo "グーテンモルゲン"
+    - run: sleep 5
+    - run: echo "グーテンアーベント. バイバイ, Auf Wiedersehen, アウフヴィーダーゼーエン. ありがとう, Danke schön, ダンケシェーン."
 
 workflows:
   version: 2
   test:
     jobs:
-    - test-jp-text
+    - test-output
