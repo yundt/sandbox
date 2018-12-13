@@ -6,10 +6,8 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
-    - run: echo "グーテンモルゲン"
-    - run: echo $VERY_TEST_VAR
-    - run: sleep 5
-    - run: echo "グーテンアーベント. バイバイ, Auf Wiedersehen, アウフヴィーダーゼーエン. ありがとう, Danke schön, ダンケシェーン."
+    - run: echo "グーテンモルゲン
+      yolo"
 
 workflows:
   version: 2
