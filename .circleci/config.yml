@@ -6,9 +6,7 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
-    - run: echo "グーテンモルゲン
-
-      yolo"
+    - run: echo "グーテンモルゲン yolo"
 
 workflows:
   version: 2
