@@ -6,7 +6,7 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
-    - run: echo "a string with : in it"
+    - run: echo "a string"
 
 workflows:
   test:
