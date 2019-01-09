@@ -1,4 +1,4 @@
-version: 2.0
+version: 2
 
 jobs:
   test-output:
@@ -9,7 +9,7 @@ jobs:
     - run: echo "a stringggg"
 
 workflows:
-  version: 2.0
+  version: 2
   test:
     jobs:
     - test-output
