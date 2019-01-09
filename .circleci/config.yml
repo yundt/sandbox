@@ -9,6 +9,7 @@ jobs:
     - run: echo "a stringggg"
 
 workflows:
+  version: 2.0
   test:
     jobs:
     - test-output
