@@ -6,7 +6,7 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
-    - run: echo "a stringg"
+    - run: echo "a stringgg"
 
 workflows:
   test:
