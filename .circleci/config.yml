@@ -1,7 +1,7 @@
 version: 2
 
 orbs:
-   nchore-engine: anchore/anchore-engine@1.1.0
+   anchore-engine: anchore/anchore-engine@1.1.0
 
 jobs:
   test-output:
@@ -10,6 +10,9 @@ jobs:
     steps:
     - checkout
     - run: echo "a stringgg"
+    - anchore/image_scan:
+        image_name: 'docker.io/anchore/anchore-engine:latest'
+        timeout: '300'
 
 workflows:
   version: 2
