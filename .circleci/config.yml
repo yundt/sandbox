@@ -1,18 +1,16 @@
-version: 2
+version: 2.1
 
 orbs:
    anchore-engine: anchore/anchore-engine@1.1.0
+   hello: circleci/hello-build@0.0.7
 
 jobs:
   test-output:
     docker:
     - image: circleci/python:2.7-stretch
     steps:
-    - checkout
-    - run: echo "a stringgg"
-    - anchore/image_scan:
-        image_name: 'docker.io/anchore/anchore-engine:latest'
-        timeout: '300'
+      - hello/hello-triggerer
+
 
 workflows:
   version: 2
