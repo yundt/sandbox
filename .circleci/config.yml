@@ -7,6 +7,7 @@ jobs:
     steps:
     - checkout
     - run: echo "✅"
+    - run: echo "🚫"
 
 workflows:
   version: 2
