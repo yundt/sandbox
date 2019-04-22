@@ -6,6 +6,28 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
+    - run: sleep 3
+    - run: echo "1"
+    - run: sleep 3
+    - run: echo "2"
+    - run: sleep 3
+    - run: echo "3"
+    - run: sleep 3
+    - run: echo "4"
+    - run: sleep 3
+    - run: echo "5"
+    - run: sleep 3
+    - run: echo "6"
+    - run: sleep 3
+    - run: echo "7"
+    - run: sleep 3
+    - run: echo "8"
+    - run: sleep 3
+    - run: echo "9"
+    - run: sleep 3
+    - run: echo "4"
+    - run: sleep 3
+    - run: echo "1"
     - run: sleep 30
     - run: echo "✅"
 
