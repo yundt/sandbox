@@ -14,7 +14,7 @@ jobs:
     - run: echo "3"
     - run: sleep 3
     - run: echo "4"; sleep 3;echo "r"; sleep 3;echo "y"; sleep 3;echo "h"; sleep 3;echo "g"; sleep 3;echo "f"; sleep 3;echo "c"; sleep 3;echo "h"; sleep 3;echo "j"; sleep 3;echo "s"; sleep 3;echo "4"; sleep 3;
-    - run: sleep 3
+    - run: sleep 2
     - run: echo "5"
     - run: sleep 3
     - run: echo "6"
