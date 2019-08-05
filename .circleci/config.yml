@@ -19,6 +19,6 @@ workflows:
   test:
     jobs:
     - test-output
-    - test-output:
+    - test-waiting:
         requires:
           - test-output
