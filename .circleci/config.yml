@@ -6,33 +6,19 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
-    - run: sleep 3
-    - run: echo "1"
-    - run: sleep 3
-    - run: echo "2"
-    - run: sleep 3
-    - run: echo "3"
-    - run: sleep 3
-    - run: echo "4"; sleep 3;echo "r"; sleep 3;echo "y"; sleep 3;echo "h"; sleep 3;echo "g"; sleep 3;echo "f"; sleep 3;echo "c"; sleep 3;echo "h"; sleep 3;echo "j"; sleep 3;echo "s"; sleep 3;echo "4"; sleep 3;
-    - run: sleep 1
-    - run: echo "5"
-    - run: sleep 3
-    - run: echo "6"
-    - run: sleep 3
-    - run: echo "7"
-    - run: sleep 3
-    - run: echo "8"
-    - run: sleep 3
-    - run: echo "9"
-    - run: sleep 3
-    - run: echo "4"
-    - run: sleep 3
-    - run: echo "1"
-    - run: sleep 30
+    - run: sleep 120
     - run: echo "✅"
+  test-waiting:
+    docker:
+    - image: circleci/python:2.7-stretch
+    steps:
+    - checkout
 
 workflows:
   version: 2
   test:
     jobs:
     - test-output
+    - test-output:
+        requires:
+          - test-output
