@@ -6,7 +6,8 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
-    - run: sleep 120
+    - run: sleep 60
+    - run: echo "yo yo yo"
     - run: echo "✅"
   test-waiting:
     docker:
