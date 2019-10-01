@@ -1,6 +1,7 @@
 version: 2
 
 jobs:
+
   test-output:
     docker:
     - image: circleci/python:2.7-stretch
