@@ -7,7 +7,7 @@ jobs:
     - image: circleci/python:2.7-stretch
     steps:
     - checkout
-    - run: sleep 65
+    - run: sleep 66
     - run: echo "yo yo yo"
     - run: echo "✅"
   test-waiting:
