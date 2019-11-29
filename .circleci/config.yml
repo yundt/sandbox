@@ -19,8 +19,4 @@ jobs:
 workflows:
   version: 2
   test:
-    jobs:
-    - test-output
-    - test-waiting:
-        requires:
-          - test-output
+    jo-output
