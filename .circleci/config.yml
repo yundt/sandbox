@@ -21,6 +21,6 @@ workflows:
   test:
     jobs:
     - test-output
-    - test-waiting:
-        requires:
-          - test-output
+        filters:
+          tags:
+            only: /.*/
