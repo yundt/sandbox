@@ -21,6 +21,6 @@ workflows:
   test:
     jobs:
       - test-output:
-        filters:
-          tags:
-            only: /.*/
+          filters:
+            tags:
+              only: /.*/
